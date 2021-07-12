@@ -78,7 +78,7 @@ public class UserValidator
      */
     public boolean userPassWord(String password)
     {
-        boolean passwordMatcher = Pattern.compile("^[a-z]{8}$").matcher(password).matches();
+        boolean passwordMatcher = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).{8,20}$").matcher(password).matches();
         if(passwordMatcher == true)
         {
             userDetails.setPassword(password);

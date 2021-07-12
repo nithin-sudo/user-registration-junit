@@ -36,7 +36,7 @@ public class JunitUserRegistrationTest
     public void givenPassword_WhenProper_ShouldReturnTrue()
     {
         UserValidator userValidator = new UserValidator();
-        boolean isValid = userValidator.userPassWord("nithinkr");
+        boolean isValid = userValidator.userPassWord("nithinkR");
         Assertions.assertTrue(isValid);
     }
 }
