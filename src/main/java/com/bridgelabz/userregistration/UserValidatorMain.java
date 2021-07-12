@@ -14,6 +14,9 @@ public class UserValidatorMain
         System.out.print("enter the last name:");
         String lastName = scanner.next();
         System.out.print(userValidator.lastName(lastName));
+        System.out.print("enter the email:");
+        String email = scanner.next();
+        System.out.print(userValidator.userEmail(email));
         userValidator.printUserDetails();
     }
 }

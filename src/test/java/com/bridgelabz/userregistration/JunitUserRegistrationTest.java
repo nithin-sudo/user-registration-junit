@@ -18,4 +18,11 @@ public class JunitUserRegistrationTest
         boolean isValid = userValidator.firstName("Krishna");
         Assertions.assertTrue(isValid);
     }
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue()
+    {
+        UserValidator userValidator = new UserValidator();
+        boolean isValid = userValidator.userEmail("sathramnithin@gmail.com");
+        Assertions.assertTrue(isValid);
+    }
 }
