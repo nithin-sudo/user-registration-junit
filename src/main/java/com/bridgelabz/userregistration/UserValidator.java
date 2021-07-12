@@ -74,6 +74,23 @@ public class UserValidator
         return mobileNumberMatcher;
     }
     /**
+     * asking user to enter the password and setting the password.
+     */
+    public boolean userPassWord(String password)
+    {
+        boolean passwordMatcher = Pattern.compile("^[a-z]{8}$").matcher(password).matches();
+        if(passwordMatcher == true)
+        {
+            userDetails.setPassword(password);
+        }
+        else
+        {
+            System.err.println("you have entered wrong input User need to follow pre -defined Password rules minimum 8  Characters ");
+            System.out.println();
+        }
+        return passwordMatcher;
+    }
+    /**
      * printing the user details.
      */
     public void printUserDetails()

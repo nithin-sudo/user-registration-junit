@@ -20,6 +20,9 @@ public class UserValidatorMain
         System.out.print("enter the Mobile Number:");
         String mobileNumber = scanner.nextLine();
         System.out.print(userValidator.userMobileNumber(mobileNumber));
+        System.out.print("enter the user password:");
+        String password = scanner.next();
+        System.out.print(userValidator.userMobileNumber(mobileNumber));
         userValidator.printUserDetails();
     }
 }

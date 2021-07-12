@@ -32,4 +32,11 @@ public class JunitUserRegistrationTest
         boolean isValid = userValidator.userMobileNumber("91 7986985868");
         Assertions.assertTrue(isValid);
     }
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue()
+    {
+        UserValidator userValidator = new UserValidator();
+        boolean isValid = userValidator.userPassWord("nithinkr");
+        Assertions.assertTrue(isValid);
+    }
 }
