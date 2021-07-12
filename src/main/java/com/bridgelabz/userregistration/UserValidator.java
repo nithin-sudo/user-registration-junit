@@ -22,6 +22,24 @@ public class UserValidator
         return firstNameMatcher;
     }
     /**
+     * asking user to enter the last name and setting the lastname.
+     */
+    public boolean lastName(String lastName)
+    {
+
+        boolean lastNameMatcher = Pattern.compile("^[A-Z]{1}[a-z]{2,}$").matcher(lastName).matches();
+        if (lastNameMatcher == true)
+        {
+            userDetails.setLastName(lastName);
+        }
+        else
+        {
+            System.err.println("you have entered wrong input last name starts with Cap and has minimum 3 characters");
+            System.out.println();
+        }
+        return lastNameMatcher;
+    }
+    /**
      * printing the user details.
      */
     public void printUserDetails()

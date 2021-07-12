@@ -11,4 +11,11 @@ public class JunitUserRegistrationTest
         boolean isValid = userValidator.firstName("Nithin");
         Assertions.assertTrue(isValid);
     }
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue()
+    {
+        UserValidator userValidator = new UserValidator();
+        boolean isValid = userValidator.firstName("Krishna");
+        Assertions.assertTrue(isValid);
+    }
 }
