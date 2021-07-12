@@ -5,6 +5,7 @@ public class UserDetails
     private String firstName;
     private String lastName;
     private String email;
+    private String mobileNumber;
     public String getFirstName()
     {
         return firstName;
@@ -31,6 +32,15 @@ public class UserDetails
     {
         this.email = email;
     }
+    public String getMobileNumber()
+    {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber)
+    {
+        this.mobileNumber = mobileNumber;
+    }
 
     @Override
     public String toString() {
@@ -38,6 +48,7 @@ public class UserDetails
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
                 '}';
     }
 }

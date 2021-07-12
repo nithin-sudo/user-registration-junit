@@ -57,6 +57,23 @@ public class UserValidator
         return emailMatcher;
     }
     /**
+     * asking user to enter the mobile number and setting the mobile number.
+     */
+    public boolean userMobileNumber(String mobileNumber)
+    {
+        boolean mobileNumberMatcher = Pattern.compile("^[0-9]\\d{1}\\s[789]\\d{9}$").matcher(mobileNumber).matches();
+        if(mobileNumberMatcher == true)
+        {
+            userDetails.setMobileNumber(mobileNumber);
+        }
+        else
+        {
+            System.err.println("you have entered wrong input Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number");
+            System.out.println();
+        }
+        return mobileNumberMatcher;
+    }
+    /**
      * printing the user details.
      */
     public void printUserDetails()
