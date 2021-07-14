@@ -39,4 +39,5 @@ public class JunitUserRegistrationTest
         boolean isValid = userValidator.userPassWord("nithinkR1@");
         Assertions.assertTrue(isValid);
     }
+
 }

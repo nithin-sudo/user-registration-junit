@@ -2,7 +2,7 @@ package com.bridgelabz.userregistration;
 import java.util.regex.*;
 public class UserValidator
 {
-    UserDetails userDetails = new UserDetails();
+    static UserDetails userDetails = new UserDetails();
     /**
      * asking user to enter the first name and setting the firstname.
      */
@@ -42,12 +42,12 @@ public class UserValidator
     /**
      * asking user to enter the email and setting the email.
      */
-    public boolean userEmail(String email)
+    public static boolean userEmail(String emailId)
     {
-        boolean emailMatcher = Pattern.compile("^[a-z]+([._%+-][A-Za-z0-9]+)*@([A-Za-z0-9]+).([A-Za-z]{2,4})(\\.[A-Za-z]{2,3})?$").matcher(email).matches();
+        boolean emailMatcher = Pattern.compile("^[a-z]+([._%+-][A-Za-z0-9]+)*@([A-Za-z0-9]+).([A-Za-z]{2,4})(\\.[A-Za-z]{2,3})?$").matcher(emailId).matches();
         if(emailMatcher == true)
         {
-            userDetails.setEmail(email);
+            userDetails.setEmail(emailId);
         }
         else
         {

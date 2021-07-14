@@ -4,7 +4,7 @@ public class UserDetails
 {
     private String firstName;
     private String lastName;
-    private String email;
+    private static String email;
     private String mobileNumber;
     private String password;
     public String getFirstName()
