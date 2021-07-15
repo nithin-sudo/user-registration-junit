@@ -25,7 +25,7 @@ public class JunitUserRegistrationTest
        } catch (UserValidatorException e) {
            e.printStackTrace();
        }
-    }
+   }
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue()
     {
@@ -33,6 +33,7 @@ public class JunitUserRegistrationTest
         boolean isValid = userValidator.lastName("Krishna");
         Assertions.assertTrue(isValid);
     }
+
     @Test
     public void givenLastName_WhenNull_ShouldReturnException()  {
         try {
@@ -109,5 +110,4 @@ public class JunitUserRegistrationTest
             e.printStackTrace();
         }
     }
-
 }

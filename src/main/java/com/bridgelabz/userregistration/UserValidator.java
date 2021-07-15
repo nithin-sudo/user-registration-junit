@@ -1,5 +1,5 @@
 package com.bridgelabz.userregistration;
-import java.util.regex.*;
+import java.util.regex.Pattern;
 public class UserValidator
 {
     static UserDetails userDetails = new UserDetails();
@@ -9,7 +9,10 @@ public class UserValidator
     public boolean firstName(String firstName)  {
         try
         {
-            boolean firstNameMatcher = Pattern.compile("^[A-Z]{1}[a-z]{2,}$").matcher(firstName).matches();
+            ValidateUserEntry validate = (pattern, name) -> Pattern.compile(pattern).matcher(name).matches();
+            String pattern = "^[A-Z]{1}[a-z]{2,}$";
+            boolean firstNameMatcher = validate.validateEntry(pattern,firstName);
+            ValidateUserEntry.printTrueOrFalse(pattern,firstName,"firstName",validate);
             if (firstNameMatcher == true) {
                 userDetails.setFirstName(firstName);
             } else {
@@ -30,7 +33,10 @@ public class UserValidator
     public boolean lastName(String lastName)
     {
         try {
-            boolean lastNameMatcher = Pattern.compile("^[A-Z]{1}[a-z]{2,}$").matcher(lastName).matches();
+            ValidateUserEntry validate = (pattern, name) -> Pattern.compile(pattern).matcher(name).matches();
+            String pattern = "^[A-Z]{1}[a-z]{2,}$";
+            boolean lastNameMatcher = validate.validateEntry(pattern,lastName);
+            ValidateUserEntry.printTrueOrFalse(pattern,lastName,"lastName",validate);
             if (lastNameMatcher == true) {
                 userDetails.setLastName(lastName);
             } else {
@@ -50,7 +56,10 @@ public class UserValidator
     public static boolean userEmail(String emailId)
     {
         try {
-            boolean emailMatcher = Pattern.compile("^[a-z]+([._%+-][A-Za-z0-9]+)*@([A-Za-z0-9]+).([A-Za-z]{2,4})(\\.[A-Za-z]{2,3})?$").matcher(emailId).matches();
+            ValidateUserEntry validate = (pattern, name) -> Pattern.compile(pattern).matcher(name).matches();
+            String pattern = "^[a-z]+([._%+-][A-Za-z0-9]+)*@([A-Za-z0-9]+).([A-Za-z]{2,4})(\\.[A-Za-z]{2,3})?$";
+            boolean emailMatcher = validate.validateEntry(pattern,emailId);
+            ValidateUserEntry.printTrueOrFalse(pattern,emailId,"emailId",validate);
             if (emailMatcher == true) {
                 userDetails.setEmail(emailId);
             } else {
@@ -70,7 +79,10 @@ public class UserValidator
     public boolean userMobileNumber(String mobileNumber)
     {
         try {
-            boolean mobileNumberMatcher = Pattern.compile("^[0-9]\\d{1}\\s[789]\\d{9}$").matcher(mobileNumber).matches();
+            ValidateUserEntry validate = (pattern, name) -> Pattern.compile(pattern).matcher(name).matches();
+            String pattern = "^[0-9]\\d{1}\\s[789]\\d{9}$";
+            boolean mobileNumberMatcher = validate.validateEntry(pattern,mobileNumber);
+            ValidateUserEntry.printTrueOrFalse(pattern,mobileNumber,"mobileNumber",validate);
             if (mobileNumberMatcher == true) {
                 userDetails.setMobileNumber(mobileNumber);
             } else {
@@ -90,7 +102,10 @@ public class UserValidator
     public boolean userPassWord(String password)
     {
         try {
-            boolean passwordMatcher = Pattern.compile("^(?=.*[0-9])(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]).{8,20}$").matcher(password).matches();
+            ValidateUserEntry validate = (pattern, name) -> Pattern.compile(pattern).matcher(name).matches();
+            String pattern = "^(?=.*[0-9])(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]).{8,20}$";
+            boolean passwordMatcher = validate.validateEntry(pattern,password);
+            ValidateUserEntry.printTrueOrFalse(pattern,password,"password",validate);
             if (passwordMatcher == true) {
                 userDetails.setPassword(password);
             } else {
